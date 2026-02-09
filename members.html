@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Squad | TRR TO KILL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            cursor: default;
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(220, 38, 38, 0.7), 0 0 20px rgba(220, 38, 38, 0.5);
+        }
+
+        .member-card {
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            border-color: #cc0000;
+            box-shadow: 0 10px 30px rgba(204, 0, 0, 0.2);
+        }
+
+        .role-badge {
+            background: linear-gradient(90deg, #cc0000, #ff4d4d);
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#ff4d4d',
+                            DEFAULT: '#cc0000',
+                            dark: '#800000',
+                        },
+                        dark: {
+                            bg: '#0a0a0a',
+                            card: '#141414'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="overflow-x-hidden pt-20">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-white/10"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html"
+                        class="brand-font text-3xl font-black text-brand tracking-widest hover:text-white transition-colors">
+                        T2K<span class="text-white text-xl ml-1">ESPORTS</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">HOME</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">ABOUT</a>
+                        <a href="members.html"
+                            class="text-white hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors border-b-2 border-brand">SQUAD</a>
+                        <a href="gallery.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">GALLERY</a>
+                        <a href="join.html"
+                            class="bg-brand hover:bg-brand-dark text-white px-5 py-2 rounded-full font-bold transition-all hover:scale-105">JOIN
+                            NOW</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-black/95 backdrop-blur-xl border-b border-brand/20" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">HOME</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">ABOUT</a>
+                <a href="members.html"
+                    class="text-brand hover:text-white block px-3 py-2 rounded-md text-base font-medium">SQUAD</a>
+                <a href="gallery.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">GALLERY</a>
+                <a href="join.html"
+                    class="text-brand hover:text-white block px-3 py-2 rounded-md text-base font-bold">JOIN NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-20 text-center relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand/10 to-transparent pointer-events-none"></div>
+        <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase text-glow">Meet The <span
+                class="text-brand">Elite</span></h1>
+        <p class="text-gray-400 text-xl">The legends behind the tag.</p>
+    </header>
+
+    <!-- Leadership Section -->
+    <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-10 border-b border-white/10 pb-4">Command Center</h2>
+
+        <div class="flex flex-wrap justify-center gap-8 mb-16">
+            <!-- Leader Card -->
+            <div class="member-card w-full md:w-80 rounded-2xl overflow-hidden relative group">
+                <div class="h-48 bg-gray-800 relative">
+                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Leader"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black to-transparent"></div>
+                </div>
+                <div class="p-6 text-center relative">
+                    <div
+                        class="role-badge absolute -top-4 left-1/2 transform -translate-x-1/2 px-6 py-1 text-white text-xs font-bold uppercase tracking-widest shadow-lg">
+                        LEADER</div>
+                    <h3 class="text-2xl font-black text-white mt-4">T2K · BOSS</h3>
+                    <p class="text-brand font-medium text-sm mb-4">Guild Master</p>
+                    <div class="flex justify-center space-x-4">
+                        <div class="text-center">
+                            <span class="block text-xl font-bold text-white">4.5</span>
+                            <span class="text-xs text-gray-500">KD Ratio</span>
+                        </div>
+                        <div class="text-center border-l border-gray-700 pl-4">
+                            <span class="block text-xl font-bold text-white">GM</span>
+                            <span class="text-xs text-gray-500">Rank</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Co-Leader Card 1 -->
+            <div class="member-card w-full md:w-72 rounded-2xl overflow-hidden relative group mt-4 md:mt-10">
+                <div class="h-40 bg-gray-800 relative">
+                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Officer"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                </div>
+                <div class="p-6 text-center relative">
+                    <div
+                        class="absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gray-700 text-white text-xs font-bold uppercase tracking-widest rounded shadow-lg">
+                        CO-LEADER</div>
+                    <h3 class="text-xl font-black text-white mt-2">T2K · VIPER</h3>
+                    <p class="text-gray-400 font-medium text-xs mb-4">Strategist</p>
+                    <div class="flex justify-center space-x-4">
+                        <div class="text-center">
+                            <span class="block text-lg font-bold text-white">3.8</span>
+                            <span class="text-xs text-gray-500">KD Ratio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Co-Leader Card 2 -->
+            <div class="member-card w-full md:w-72 rounded-2xl overflow-hidden relative group mt-4 md:mt-10">
+                <div class="h-40 bg-gray-800 relative">
+                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Officer"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                </div>
+                <div class="p-6 text-center relative">
+                    <div
+                        class="absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gray-700 text-white text-xs font-bold uppercase tracking-widest rounded shadow-lg">
+                        CO-LEADER</div>
+                    <h3 class="text-xl font-black text-white mt-2">T2K · GHOST</h3>
+                    <p class="text-gray-400 font-medium text-xs mb-4">Rusher</p>
+                    <div class="flex justify-center space-x-4">
+                        <div class="text-center">
+                            <span class="block text-lg font-bold text-white">5.2</span>
+                            <span class="text-xs text-gray-500">KD Ratio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Squad Members -->
+    <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-10 border-b border-white/10 pb-4">Elite Squad</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Member Loop (Static for now) -->
+            <div class="member-card p-4 rounded-xl flex items-center space-x-4 hover:bg-white/5">
+                <div class="w-12 h-12 rounded-full bg-brand flex items-center justify-center font-bold text-white">01
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">T2K · NINJA</h4>
+                    <p class="text-xs text-gray-400">Sniper Specialist</p>
+                </div>
+            </div>
+            <div class="member-card p-4 rounded-xl flex items-center space-x-4 hover:bg-white/5">
+                <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center font-bold text-white">02
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">T2K · SHADOW</h4>
+                    <p class="text-xs text-gray-400">Assault</p>
+                </div>
+            </div>
+            <div class="member-card p-4 rounded-xl flex items-center space-x-4 hover:bg-white/5">
+                <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center font-bold text-white">03
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">T2K · DEVIL</h4>
+                    <p class="text-xs text-gray-400">Flanker</p>
+                </div>
+            </div>
+            <div class="member-card p-4 rounded-xl flex items-center space-x-4 hover:bg-white/5">
+                <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center font-bold text-white">04
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">T2K · KING</h4>
+                    <p class="text-xs text-gray-400">Support</p>
+                </div>
+            </div>
+            <div class="member-card p-4 rounded-xl flex items-center space-x-4 hover:bg-white/5">
+                <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center font-bold text-white">05
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">T2K · VENOM</h4>
+                    <p class="text-xs text-gray-400">Assault</p>
+                </div>
+            </div>
+            <div class="member-card p-4 rounded-xl flex items-center space-x-4 hover:bg-white/5">
+                <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center font-bold text-white">06
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">T2K · STORM</h4>
+                    <p class="text-xs text-gray-400">Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

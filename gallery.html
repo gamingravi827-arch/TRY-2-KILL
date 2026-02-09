@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | TRR TO KILL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            cursor: default;
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(220, 38, 38, 0.7), 0 0 20px rgba(220, 38, 38, 0.5);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            border-color: #cc0000;
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(204, 0, 0, 0.3);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#ff4d4d',
+                            DEFAULT: '#cc0000',
+                            dark: '#800000',
+                        },
+                        dark: {
+                            bg: '#0a0a0a',
+                            card: '#141414'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="overflow-x-hidden pt-20">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-white/10"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html"
+                        class="brand-font text-3xl font-black text-brand tracking-widest hover:text-white transition-colors">
+                        T2K<span class="text-white text-xl ml-1">ESPORTS</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">HOME</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">ABOUT</a>
+                        <a href="members.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">SQUAD</a>
+                        <a href="gallery.html"
+                            class="text-white hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors border-b-2 border-brand">GALLERY</a>
+                        <a href="join.html"
+                            class="bg-brand hover:bg-brand-dark text-white px-5 py-2 rounded-full font-bold transition-all hover:scale-105">JOIN
+                            NOW</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-black/95 backdrop-blur-xl border-b border-brand/20" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">HOME</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">ABOUT</a>
+                <a href="members.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">SQUAD</a>
+                <a href="gallery.html"
+                    class="text-brand hover:text-white block px-3 py-2 rounded-md text-base font-medium">GALLERY</a>
+                <a href="join.html"
+                    class="text-brand hover:text-white block px-3 py-2 rounded-md text-base font-bold">JOIN NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-20 text-center relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand/5 to-transparent pointer-events-none"></div>
+        <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase text-glow">War <span class="text-brand">Zone</span>
+        </h1>
+        <p class="text-gray-400 text-xl">Best moments, victories, and squads.</p>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+
+            <!-- Item 1 -->
+            <div class="gallery-item break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="Gameplay" class="w-full h-auto">
+                <div class="gallery-overlay">
+                    <div>
+                        <h4 class="text-xl font-bold font-orbitron text-white">Victory Royale</h4>
+                        <p class="text-sm text-brand font-medium">Tournament Final</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="Setup" class="w-full h-auto">
+                <div class="gallery-overlay">
+                    <div>
+                        <h4 class="text-xl font-bold font-orbitron text-white">Squad Practice</h4>
+                        <p class="text-sm text-brand font-medium">Daily Scrims</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="Character" class="w-full h-auto">
+                <div class="gallery-overlay">
+                    <div>
+                        <h4 class="text-xl font-bold font-orbitron text-white">MVP Moment</h4>
+                        <p class="text-sm text-brand font-medium">Shadow · 15 Kills</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="gallery-item break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1593305841991-05c29736cec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="Action" class="w-full h-auto">
+                <div class="gallery-overlay">
+                    <div>
+                        <h4 class="text-xl font-bold font-orbitron text-white">Last Circle</h4>
+                        <p class="text-sm text-brand font-medium">Clutch Play</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-item break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="Event" class="w-full h-auto">
+                <div class="gallery-overlay">
+                    <div>
+                        <h4 class="text-xl font-bold font-orbitron text-white">Clan War</h4>
+                        <p class="text-sm text-brand font-medium">vs Team Elite</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="gallery-item break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1509198399403-b92477ee0bf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="Celebration" class="w-full h-auto">
+                <div class="gallery-overlay">
+                    <div>
+                        <h4 class="text-xl font-bold font-orbitron text-white">Championship</h4>
+                        <p class="text-sm text-brand font-medium">Season 5 Winners</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

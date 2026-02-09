@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TRR TO KILL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            cursor: default;
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(220, 38, 38, 0.7), 0 0 20px rgba(220, 38, 38, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#ff4d4d',
+                            DEFAULT: '#cc0000',
+                            dark: '#800000',
+                        },
+                        dark: {
+                            bg: '#0a0a0a',
+                            card: '#141414'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="overflow-x-hidden pt-20">
+
+    <!-- Navbar (Same as index) -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-white/10"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html"
+                        class="brand-font text-3xl font-black text-brand tracking-widest hover:text-white transition-colors">
+                        T2K<span class="text-white text-xl ml-1">ESPORTS</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">HOME</a>
+                        <a href="about.html"
+                            class="text-white hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors border-b-2 border-brand">ABOUT</a>
+                        <a href="members.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">SQUAD</a>
+                        <a href="gallery.html"
+                            class="text-gray-300 hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">GALLERY</a>
+                        <a href="join.html"
+                            class="bg-brand hover:bg-brand-dark text-white px-5 py-2 rounded-full font-bold transition-all hover:scale-105">JOIN
+                            NOW</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-black/95 backdrop-blur-xl border-b border-brand/20" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">HOME</a>
+                <a href="about.html"
+                    class="text-brand hover:text-white block px-3 py-2 rounded-md text-base font-medium">ABOUT</a>
+                <a href="members.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">SQUAD</a>
+                <a href="gallery.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">GALLERY</a>
+                <a href="join.html"
+                    class="text-brand hover:text-white block px-3 py-2 rounded-md text-base font-bold">JOIN NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="relative py-20 bg-dark-bg overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-20">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-black mb-4 uppercase text-glow">Our <span
+                    class="text-brand">Legacy</span></h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Founded in 2023, TRR TO KILL has risen from the ashes to
+                become one of the most feared squads in the region.</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold uppercase border-l-4 border-brand pl-4">The Mission</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        T2K was built on a simple principle: <span class="text-brand font-bold">Domination through
+                            Unity.</span> We are not just a guild; we are a family of elite players who strive for
+                        perfection in every match. Whether it's classic BR or Clash Squad, we play to win.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Our goal is to foster a competitive environment where players can grow, learn advanced
+                        strategies, and participate in high-stakes tournaments.
+                    </p>
+                </div>
+
+                <div class="glass-card p-1 rounded-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
+                    <!-- Placeholder for Guild Image -->
+                    <div
+                        class="bg-gradient-to-br from-gray-800 to-black h-80 rounded-xl flex items-center justify-center">
+                        <span class="text-brand font-black text-4xl">T2K SQUAD</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section class="py-16 bg-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold uppercase text-center mb-12">Guild <span class="text-brand">Rules</span></h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Rule 1 -->
+                <div class="glass-card p-6 rounded-lg hover:border-brand transition-colors">
+                    <span class="text-5xl text-brand/20 font-black absolute top-4 right-4">01</span>
+                    <h3 class="text-xl font-bold mb-2 relative z-10">Respect All</h3>
+                    <p class="text-gray-400 relative z-10">Respect fellow members and opponents. Toxicity is zero
+                        tolerance.</p>
+                </div>
+                <!-- Rule 2 -->
+                <div class="glass-card p-6 rounded-lg hover:border-brand transition-colors">
+                    <span class="text-5xl text-brand/20 font-black absolute top-4 right-4">02</span>
+                    <h3 class="text-xl font-bold mb-2 relative z-10">Be Active</h3>
+                    <p class="text-gray-400 relative z-10">Daily glory contribution is mandatory. Inactivity for 3 days
+                        = Kick.</p>
+                </div>
+                <!-- Rule 3 -->
+                <div class="glass-card p-6 rounded-lg hover:border-brand transition-colors">
+                    <span class="text-5xl text-brand/20 font-black absolute top-4 right-4">03</span>
+                    <h3 class="text-xl font-bold mb-2 relative z-10">Change Name</h3>
+                    <p class="text-gray-400 relative z-10">All members must use the T2K tag within 7 days of joining.
+                    </p>
+                </div>
+                <!-- Rule 4 -->
+                <div class="glass-card p-6 rounded-lg hover:border-brand transition-colors">
+                    <span class="text-5xl text-brand/20 font-black absolute top-4 right-4">04</span>
+                    <h3 class="text-xl font-bold mb-2 relative z-10">Mic On</h3>
+                    <p class="text-gray-400 relative z-10">Communication is key. Mic usage is required during squad
+                        games.</p>
+                </div>
+                <!-- Rule 5 -->
+                <div class="glass-card p-6 rounded-lg hover:border-brand transition-colors">
+                    <span class="text-5xl text-brand/20 font-black absolute top-4 right-4">05</span>
+                    <h3 class="text-xl font-bold mb-2 relative z-10">Loyalty</h3>
+                    <p class="text-gray-400 relative z-10">Loyalty to the guild is paramount. Multi-guilding is not
+                        allowed.</p>
+                </div>
+                <!-- Rule 6 -->
+                <div class="glass-card p-6 rounded-lg hover:border-brand transition-colors">
+                    <span class="text-5xl text-brand/20 font-black absolute top-4 right-4">06</span>
+                    <h3 class="text-xl font-bold mb-2 relative z-10">Scrims</h3>
+                    <p class="text-gray-400 relative z-10">Participation in scheduled scrims and tournaments is highly
+                        encouraged.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
